@@ -1,33 +1,31 @@
 import React from 'react';
-import { useSelector , useDispatch} from "react-redux";
-import {incNumber,decNumber} from "./actions/index"
+import { useSelector, useDispatch } from "react-redux";
+import { incNumber, decNumber } from "./actions/index"
 
 const App = () => {
-  const selector = useSelector((state)=>state.stepper)
+  const selector = useSelector((state) => state.stepper);
   const dispatch = useDispatch();
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-white rounded-md shadow-lg p-6">
-        <h1 className="text-2xl font-bold mb-4">Number Stepper using React & Redux</h1>
-        <div className="flex items-center justify-center space-x-2">
-          <button 
-          onClick={()=>{dispatch(decNumber())}}
-          className="bg-gray-200 hover:bg-gray-300 rounded-md px-4 py-2 shadow-md">
-            -
-          </button>
-          <input
-            className="bg-gray-200 px-4 py-2 rounded-md text-center text-gray-700 shadow-md"
-            type="text"
-            value={selector}
-            readOnly
-            />
-          <button
-          onClick={()=>{dispatch(incNumber())}}
-          className="bg-gray-200 hover:bg-gray-300 rounded-md px-4 py-2 shadow-md">
-            +
-          </button>
-        </div>
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+      <header className="text-2xl font-bold mb-8 text-center">Number Stepper using<br/>React & Redux</header>
+      <div className="flex items-center space-x-4">
+        <button 
+        onClick={()=>{dispatch(decNumber())}}
+        className="p-4 bg-white rounded shadow-md">
+          <span className="text-gray-700 text-2xl font-bold">-</span>
+        </button>
+        <input
+          type="text"
+          className="w-16 p-4 bg-white rounded shadow-md text-center"
+          value={selector}
+          readOnly
+        />
+        <button 
+        onClick={()=>{dispatch(incNumber())}}
+        className="p-4 bg-white rounded shadow-md">
+          <span className="text-gray-700 text-2xl font-bold">+</span>
+        </button>
       </div>
     </div>
   );
