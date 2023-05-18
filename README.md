@@ -28,7 +28,3 @@ This will compile the project and launch it in your default web browser. Any cha
 
 - React: A JavaScript library for building user interfaces.
 - Redux: A predictable state container for JavaScript apps.
-
-## Contributing
-
-Contributions are welcome! If you find any issues or want to add new features, please feel free to submit a pull request. Make sure to follow the [contribution guidelines](CONTRIBUTING.md) in this repository.
